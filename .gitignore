@@ -1,0 +1,4 @@
+node_modules/*
+app/config/config.local.neon
+vendor/*
+temp/cache
