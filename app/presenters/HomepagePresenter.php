@@ -38,4 +38,11 @@ class HomepagePresenter extends Nette\Application\UI\Presenter
 		$this->presenter->sendPayload();
 	}
 
+
+	public function actionRemoveCar($id) {
+		$this->context->table('car')->where('id', $_GET['id'])->delete();
+		$this->presenter->payload->result = TRUE;
+		$this->presenter->sendPayload();
+	}
+
 }

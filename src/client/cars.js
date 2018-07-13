@@ -52,6 +52,7 @@ export default class Cars extends React.Component {
         this.setState({
             cars: this.state.cars.filter(car => car.id !== id)
         });
+        this.apiClient.removeCar(id);
     }
 
     toggleCar(id) {
