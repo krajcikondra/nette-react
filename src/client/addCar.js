@@ -10,10 +10,7 @@ export default class AddCar extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-        this.handleChangeBrand = this.handleChangeBrand.bind(this);
-        this.handleChangeModel = this.handleChangeModel.bind(this);
-        this.handleChangeYear = this.handleChangeYear.bind(this);
-        this.handleChangeKm = this.handleChangeKm.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         if (this.props.car) {
             this.state = this.props.car;
@@ -32,21 +29,10 @@ export default class AddCar extends React.Component {
         this.apiClient = new ApiClient();
     }
 
-    handleChangeBrand(e) {
-        this.setState({ brand: e.target.brand });
-    }
-
-    handleChangeModel(e) {
-        this.setState({ model: e.target.model });
-    }
-
-    handleChangeYear(e) {
-        this.setState({ year: e.target.year });
-    }
-
-
-    handleChangeKm(e) {
-        this.setState({ km: e.target.km });
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
     }
 
 
@@ -54,42 +40,41 @@ export default class AddCar extends React.Component {
     render() {
         return (
             <div className="addCar">
-                <h3>Nové auto</h3>,
-                <form onSubmit={(e) => this.handleSubmit(e)} ref="addCar">
+                <form onSubmit={this.handleSubmit} ref="addCar">
 
                     <FormGroup validationState={this.getValidationState()} >
                         <ControlLabel>Znacka</ControlLabel>
-                        <FormControl type="text" name="brand" value={this.state.brand} placeholder="Enter text" onChange={this.handleChangeBrand} />
+                        <FormControl type="text" name="brand" value={this.state.brand} placeholder="Enter text" onChange={this.handleChange} />
                         <FormControl.Feedback />
                         <HelpBlock>Validation is based on string length.</HelpBlock>
                     </FormGroup>
 
                     <FormGroup validationState={this.getValidationState()} >
                         <ControlLabel>Model</ControlLabel>
-                        <FormControl type="text"  name="model" placeholder="Enter text" value={this.state.model} onChange={this.handleChangeModel} />
+                        <FormControl type="text"  name="model" placeholder="Enter text" value={this.state.model} onChange={this.handleChange} />
                         <FormControl.Feedback />
                         <HelpBlock>Validation is based on string length.</HelpBlock>
                     </FormGroup>
 
                     <FormGroup validationState={this.getValidationState()} >
                         <ControlLabel>Rok</ControlLabel>
-                        <FormControl type="text" name="year" placeholder="Enter text" value={this.state.year} onChange={this.handleChangeYear} />
+                        <FormControl type="text" name="year" placeholder="Enter text" value={this.state.year} onChange={this.handleChange} />
                         <FormControl.Feedback />
                         <HelpBlock>Validation is based on string length.</HelpBlock>
                     </FormGroup>
                     <FormGroup>
                         <ControlLabel>Pocet najetych km</ControlLabel>
                         <InputGroup>
-                            <FormControl  value={this.state.km} type="text" onChange={this.handleChangeKm} />
+                            <FormControl  value={this.state.km} name="km" type="text" onChange={this.handleChange} />
                             <InputGroup.Addon>
-                               km
+                                km
                             </InputGroup.Addon>
                         </InputGroup>
                     </FormGroup>
                     <input type="submit" value="Uložit" className="btn btn-primary" />
                 </form>
             </div>
-           );
+        );
     }
 
 
@@ -104,20 +89,9 @@ export default class AddCar extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({ brand: e.target.brand });
-        console.log(this.state, e.target.brand);
-        return;
 
-        // @todo nastavovani proops stejnee nefunguje
-        // this.setState({
-        //         brand: ReactDOM.findDOMNode(this.refs.brand).value,
-        //         model: ReactDOM.findDOMNode(this.refs.model).value,
-        //         year: ReactDOM.findDOMNode(this.refs.year).value,
-        //         km: ReactDOM.findDOMNode(this.refs.km).value
-        // });
-        console.log(this.state);
         if (this.state.id) {
-            this.apiClient.editCar(this.state.id, this.state.brand, this.state.model, this.year, this.km);
+            this.apiClient.editCar(this.state.id, this.state.brand, this.state.model, this.state.year, this.state.km);
         } else {
             this.apiClient.addCar(this.state.brand, this.state.model, this.state.year, this.state.km);
         }
