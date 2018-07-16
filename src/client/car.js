@@ -31,6 +31,9 @@ export default class Car extends React.Component {
                 <button onClick={() => this.props.remove(this.props.car.id)}>
                     x
                 </button>
+                <button onClick={() => this.props.edit(this.props.car)}>
+                    Edit
+                </button>
             </div>
         );
     }
@@ -40,5 +43,6 @@ export default class Car extends React.Component {
 Car.propTypes = {
     car: React.PropTypes.object.isRequired,
     remove: React.PropTypes.func.isRequired,
-    toggle: React.PropTypes.func.isRequired
+    toggle: React.PropTypes.func.isRequired,
+    edit: React.PropTypes.func.isRequired
 };

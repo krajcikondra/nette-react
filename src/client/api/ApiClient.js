@@ -19,12 +19,22 @@ export default class ApiClient {
             });
     }
 
-    addCar(vendor, model, year) {
+    addCar(vendor, model, year, km) {
         request
             .get('http://localhost/nette-react/www/homepage/add-car')
             .query({ vendor: vendor })
             .query({ model: model })
             .query({ year: year })
+            .query({ km: km })
+            // .set('Content-Type', 'application/x-www-form-urlencoded')
+            .then(function() {
+                console.log('omg');
+            });
+    }
+    editCar(id, vendor, model, year, km) {
+        request
+            .get('http://localhost/nette-react/www/homepage/edit-car')
+            .query({ id: id, vendor: vendor, model: model, year: year, km: km })
             // .set('Content-Type', 'application/x-www-form-urlencoded')
             .then(function() {
                 console.log('omg');
