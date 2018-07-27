@@ -63,9 +63,11 @@ export default class Cars extends React.Component {
 				</AddCarModal>
 
 
-				<button className="btn btn-primary" onClick={() => this.openAddCarModal()}>
-					Vytvořit auto
-				</button>
+				<div className="text-right">
+					<button className="btn btn-primary" onClick={() => this.openAddCarModal()}>
+						Vytvořit auto
+					</button>
+				</div>
 
 
 				<h3>Výpis všech aut ({this.state.cars.length})</h3>
