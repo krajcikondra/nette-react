@@ -1,0 +1,8 @@
+parameters:
+    db:
+        driver: mysql
+        host: 'localhost'
+        name: nette-react
+        user: root
+        password:
+        port: 3306
