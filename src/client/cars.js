@@ -1,7 +1,7 @@
 import React from 'react';
 import Car from './car';
-import AddCar from './addCar';
-import EditCar from './addCar';
+import AddCar from './CarForm';
+import EditCar from './CarForm';
 import ApiClient from './api/ApiClient';
 import BaseModal from './baseModal';
 
@@ -15,6 +15,7 @@ export default class Cars extends React.Component {
         this.addCar = this.addCar.bind(this);
         this.removeCar = this.removeCar.bind(this);
         this.toggleCar = this.toggleCar.bind(this);
+        this.onSubmitCarForm = this.onSubmitCarForm.bind(this); // kdyz to nabinduju, tak v te funcki muzu pouzit this pro pristup k teto tride. Jinak to funguje klasicky ze je to context te tridy do ktere to strkam
         this.editCar = this.editCar.bind(this);
         this.saveModalState = this.saveModalState.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -40,9 +41,9 @@ export default class Cars extends React.Component {
                     show={this.state.modal.show}
                     onClose={this.closeModal}
                 >
-                    <EditCar add={this.addCar} car={this.state.modal.car}/>
+                    <EditCar add={this.addCar} car={this.state.modal.car} onSubmitForm={this.onSubmitCarForm} />
                 </BaseModal>
-                <AddCar add={this.addCar} />
+                <AddCar add={this.addCar}  onSubmitForm={this.onSubmitCarForm} />
                 <h3>Auta ({this.state.cars.length})</h3>
                 {this.state.cars.map(car => {
                     return <Car car={car}
@@ -101,7 +102,6 @@ export default class Cars extends React.Component {
     }
 
     editCar(car) {
-        // @todo udelat to stejne jako je udelane toggle
         this.setState({
             modal: {
                 title: 'Editace auta ' + car.brand,
@@ -109,7 +109,10 @@ export default class Cars extends React.Component {
                 car: car
             }
         });
-        console.log('state po edit car', this.state);
+    }
+
+    onSubmitCarForm() {
+        this.closeModal();
     }
 
 }

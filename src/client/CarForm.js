@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { FormGroup, FormControl, HelpBlock, ControlLabel, InputGroup } from 'react-bootstrap';
 import ApiClient from './api/ApiClient';
 
-export default class AddCar extends React.Component {
+export default class CarForm extends React.Component {
 
     apiClient;
 
@@ -91,16 +91,25 @@ export default class AddCar extends React.Component {
         e.preventDefault();
 
         if (this.state.id) {
-            this.apiClient.editCar(this.state.id, this.state.brand, this.state.model, this.state.year, this.state.km);
+            this.apiClient.editCar(this.state.id, this.state.brand, this.state.model, this.state.year, this.state.km)
+                .then(function() {
+                    alert('ulozeno');
+                }, function() {
+                    alert('failnulo to');
+                });
+
         } else {
             this.apiClient.addCar(this.state.brand, this.state.model, this.state.year, this.state.km);
         }
 
         ReactDOM.findDOMNode(this.refs.addCar).reset();
+        this.props.onSubmitForm();
+
     }
 
 }
 
-AddCar.propTypes = {
-    add: React.PropTypes.func.isRequired,
+CarForm.propTypes = {
+    add: React.PropTypes.func.isRequired, // @Todo unused?
+    onSubmitForm: React.PropTypes.func.isRequired
 };

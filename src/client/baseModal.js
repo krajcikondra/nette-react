@@ -2,6 +2,11 @@ import React from 'react';
 import {Modal, Popover, Tooltip, Button, OverlayTrigger} from 'react-bootstrap';
 
 export default class BaseModal extends React.Component {
+
+    /**
+     * @param props
+     * @param context
+     */
     constructor(props, context) {
         super(props, context);
         this.handleShow = this.handleShow.bind(this);
