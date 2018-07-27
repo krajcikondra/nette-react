@@ -3,7 +3,7 @@ Nette-React example project
 
 * Clone repository
 
-* Create databae named 'nette-react'
+* Create databae named 'nette-react' in your MySQL server
 
 * In app/config folder create *config.local.neon* from *config.local.neon.example*
 
@@ -18,4 +18,4 @@ Nette-React example project
 
 # Launh application
 
-In terminal run  ```npm start```
+In terminal run  ```node webpack/index```
