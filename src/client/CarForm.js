@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react';
 import './addCar.less';
 import ReactDOM from 'react-dom';
@@ -88,26 +89,25 @@ export default class CarForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
+        let promise = null;
         if (this.state.id) {
-            this.apiClient.editCar(this.state.id, this.state.brand, this.state.model, this.state.year, this.state.km)
+            promise = this.apiClient.editCar(this.state.id, this.state.brand, this.state.model, this.state.year, this.state.km)
                 .then(function() {
-                    alert('ulozeno');
+                    console.log('ulozeno');
                 }, function() {
-                    alert('failnulo to');
+	                alert('failnulo to');
                 });
 
         } else {
-            this.apiClient.addCar(this.state.brand, this.state.model, this.state.year, this.state.km);
+            promise = this.apiClient.addCar(this.state.brand, this.state.model, this.state.year, this.state.km);
         }
 
         ReactDOM.findDOMNode(this.refs.addCar).reset();
-        this.props.onSubmitForm();
-
+        this.props.onSubmitForm(promise);
     }
 
 }
 
 CarForm.propTypes = {
-    add: React.PropTypes.func.isRequired, // @Todo unused?
     onSubmitForm: React.PropTypes.func.isRequired
 };

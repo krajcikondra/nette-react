@@ -13,19 +13,14 @@ export default class Cars extends React.Component {
 	constructor() {
 		super();
 		this.apiClient = new ApiClient();
-		this.addCar = this.addCar.bind(this);
 		this.removeCar = this.removeCar.bind(this);
 		this.toggleCar = this.toggleCar.bind(this);
 		this.onSubmitCarForm = this.onSubmitCarForm.bind(this); // kdyz to nabinduju, tak v te funcki muzu pouzit this pro pristup k teto tride. Jinak to funguje klasicky ze je to context te tridy do ktere to strkam
 		this.editCar = this.editCar.bind(this);
 		this.saveModalState = this.saveModalState.bind(this);
 		this.closeModal = this.closeModal.bind(this);
-		let self = this;
+		this.reloadCars();
 
-		this.apiClient.findCars().then(function(cars) {
-			self.setState(cars);
-			self.render();
-		});
 
 		this.state = {
 			cars: [],
@@ -40,6 +35,17 @@ export default class Cars extends React.Component {
 		};
 	}
 
+
+	reloadCars() {
+		let self = this;
+		this.apiClient.findCars().then(function(cars) {
+			self.setState(cars);
+			self.render();
+			console.log('reload', cars);
+		});
+	}
+
+
 	/**
 	 * @returns {XML}
 	 */
@@ -51,7 +57,7 @@ export default class Cars extends React.Component {
 					show={this.state.modal.show}
 					onClose={this.closeModal}
 				>
-					<EditCar add={this.addCar} car={this.state.modal.car} onSubmitForm={this.onSubmitCarForm} />
+					<EditCar car={this.state.modal.car} onSubmitForm={this.onSubmitCarForm} />
 				</EditCarModal>
 
 				<AddCarModal
@@ -59,7 +65,7 @@ export default class Cars extends React.Component {
 					show={this.state.addCarModal.show}
 					onClose={this.closeModal}
 				>
-					<AddCar add={this.addCar}  onSubmitForm={this.onSubmitCarForm} />
+					<AddCar onSubmitForm={this.onSubmitCarForm} />
 				</AddCarModal>
 
 
@@ -91,6 +97,9 @@ export default class Cars extends React.Component {
 		});
 	}
 
+
+
+
 	saveModalState() {
 		console.log('save modal state');
 	}
@@ -99,14 +108,6 @@ export default class Cars extends React.Component {
 
 	}
 
-	addCar(car) {
-		car.id = this.state.cars.length ?
-			this.state.cars[this.state.cars.length - 1].id + 1 : 1;
-
-		this.setState({
-			cars: this.state.cars.concat([car])
-		});
-	}
 
 	removeCar(id) {
 		this.setState({
@@ -139,13 +140,23 @@ export default class Cars extends React.Component {
 
 	/**
 	 *
+	 * @param {Promise} promise
 	 */
-	onSubmitCarForm() {
+	onSubmitCarForm(promise) {
 		this.closeModal();
 		this.setState({
 			addCarModal: {
 				show: false
 			}
+		});
+
+		console.log('onSubmit');
+
+		let self = this;
+
+		promise.then(function() {
+			console.log('promise then');
+			self.reloadCars(); // @todo better solution is load only new inserted car and add to list
 		});
 	}
 
