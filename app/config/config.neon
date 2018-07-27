@@ -1,5 +1,15 @@
 parameters:
-
+    database:
+        default:
+            dsn: '%db.driver%:host=%db.host%;dbname=%db.name%'
+            user: %db.user%
+            password: %db.password%
+            port: 3306
+            driver: %db.driver%
+database:
+    dsn: '%db.driver%:host=%db.host%;dbname=%db.name%'
+    user: %db.user%
+    password: %db.password%
 
 application:
 	errorPresenter: Error
@@ -13,3 +23,4 @@ session:
 
 services:
 	router: App\RouterFactory::createRouter
+

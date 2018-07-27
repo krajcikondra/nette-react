@@ -13,7 +13,6 @@ export default () =>
     <head>
       <meta charSet="utf-8" />
       <title>First dev-stack</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
       {isProduction && <link href={`/build/${appCSS}`} rel="stylesheet" />}
     </head>
     <body>
