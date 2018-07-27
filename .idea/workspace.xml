@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="206eebdc-bcbb-4ada-a4e7-e82e3688d3ad" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/invoice/InvoiceForm.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/CarForm.js" afterPath="$PROJECT_DIR$/src/client/CarForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/api/ApiClient.js" afterPath="$PROJECT_DIR$/src/client/api/ApiClient.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/api/HttpClient.js" afterPath="$PROJECT_DIR$/src/client/api/HttpClient.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/presenters/templates/@layout.latte" afterPath="$PROJECT_DIR$/app/presenters/templates/@layout.latte" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/car.js" afterPath="$PROJECT_DIR$/src/client/car.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/cars.js" afterPath="$PROJECT_DIR$/src/client/cars.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/main.js" afterPath="$PROJECT_DIR$/src/client/main.js" />
     </list>
@@ -67,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -79,35 +76,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="html.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/html.js">
+      <file leaf-file-name="@layout.latte" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/presenters/templates/@layout.latte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.latte" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="n#src#0;n#img#0;n#p#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.dev.babel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack/config.dev.babel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cars.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cars.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/cars.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="119" column="6" lean-forward="true" selection-start-line="119" selection-start-column="6" selection-end-line="119" selection-end-column="6" />
+            <state relative-caret-position="2016">
+              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -128,8 +123,8 @@
       <file leaf-file-name="car.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/car.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="315">
+              <caret line="30" column="53" lean-forward="false" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -146,27 +141,14 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>props.title</find>
-      <find>laung</find>
-      <find>Tady mam children</find>
-      <find>handleChange</find>
-      <find>onSubmit</find>
-      <find>BaseModal</find>
-      <find>CarForm</find>
-      <find>EditCar</find>
-      <find>add</find>
-      <find>this.add</find>
       <find>add(</find>
       <find>handleShow</find>
-      <find>addCar</find>
       <find>onSubmitForm</find>
       <find>props</find>
       <find>onClose</find>
       <find>modal</find>
       <find>setState</find>
       <find>closeModal</find>
-      <find>toggleCar</find>
-      <find>onSubmitCarForm</find>
       <find>parent</find>
       <find>resolve</find>
       <find>edit</find>
@@ -176,6 +158,19 @@
       <find>Pnotif</find>
       <find>InvoiceForm</find>
       <find />
+      <find>img</find>
+      <find>BaseModal</find>
+      <find>openAddCarModal</find>
+      <find>toggleCar</find>
+      <find>openAddCarModal</find>
+      <find>toggle</find>
+      <find>addCarModal</find>
+      <find>showM</find>
+      <find>addCar</find>
+      <find>onSubmitCarForm</find>
+      <find>vytvbo</find>
+      <find>Auta</find>
+      <find>title</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -193,11 +188,9 @@
         <option value="$PROJECT_DIR$/log/info.log" />
         <option value="$PROJECT_DIR$/app/config/config.local.neon" />
         <option value="$PROJECT_DIR$/src/client/invoice/form.js" />
-        <option value="$PROJECT_DIR$/app/presenters/templates/@layout.latte" />
         <option value="$PROJECT_DIR$/src/client/BootstrapForm.js" />
         <option value="$PROJECT_DIR$/src/client/invoice/InvoiceForm.js" />
         <option value="$PROJECT_DIR$/src/client/modal.js" />
-        <option value="$PROJECT_DIR$/src/client/car.js" />
         <option value="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" />
         <option value="$PROJECT_DIR$/src/client/addCar.js" />
         <option value="$PROJECT_DIR$/src/client/baseModal.js" />
@@ -208,8 +201,10 @@
         <option value="$PROJECT_DIR$/src/client/CarForm.js" />
         <option value="$PROJECT_DIR$/src/client/api/ApiClient.js" />
         <option value="$PROJECT_DIR$/src/client/api/HttpClient.js" />
-        <option value="$PROJECT_DIR$/src/client/cars.js" />
+        <option value="$PROJECT_DIR$/src/client/car.js" />
         <option value="$PROJECT_DIR$/src/client/main.js" />
+        <option value="$PROJECT_DIR$/app/presenters/templates/@layout.latte" />
+        <option value="$PROJECT_DIR$/src/client/cars.js" />
       </list>
     </option>
   </component>
@@ -347,18 +342,18 @@
       <updated>1531514728641</updated>
       <workItem from="1531514730207" duration="90000" />
       <workItem from="1531514831973" duration="37470000" />
-      <workItem from="1532683819588" duration="7633000" />
+      <workItem from="1532683819588" duration="9470000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45193000" />
+    <option name="totallyTimeSpent" value="47030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31847477" sideWeight="0.49544418" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31847477" sideWeight="0.49544418" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -526,14 +521,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/invoice/BootstrapForm.php" />
-    <entry file="file://$PROJECT_DIR$/app/presenters/templates/@layout.latte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="218" lean-forward="false" selection-start-line="8" selection-start-column="218" selection-end-line="8" selection-end-column="218" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -698,24 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/cars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="119" column="6" lean-forward="true" selection-start-line="119" selection-start-column="6" selection-end-line="119" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/car.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/BootstrapForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -724,10 +693,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/templates/Homepage/default.latte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="n#src#0;n#img#0;n#p#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/car.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" column="53" lean-forward="false" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/templates/@layout.latte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/cars.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

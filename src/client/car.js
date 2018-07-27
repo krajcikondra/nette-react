@@ -23,16 +23,16 @@ export default class Car extends React.Component {
                 </div>
                 }
 
-                <button onClick={() => this.props.toggle(this.props.car.id)}>
+                <button className="btn btn-primary" onClick={() => this.props.toggle(this.props.car.id)}>
                     {this.props.car.details ? 'Méně' : 'Více'}
                 </button>
                 {' '}
 
-                <button onClick={() => this.props.remove(this.props.car.id)}>
-                    x
-                </button>
-                <button onClick={() => this.props.edit(this.props.car)}>
+                <button className="btn btn-success" onClick={() => this.props.edit(this.props.car)}>
                     Edit
+                </button>
+                <button className="btn btn-danger" onClick={() => this.props.remove(this.props.car.id)}>
+                    x
                 </button>
             </div>
         );

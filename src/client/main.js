@@ -7,4 +7,5 @@ export default () =>
         <div className="clearfix"></div>
         <h2>Formular pro pridani auta</h2>
         <Cars />
+        <div className="clearfix"></div>
     </div>;

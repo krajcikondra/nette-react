@@ -3,7 +3,8 @@ import Car from './car';
 import AddCar from './CarForm';
 import EditCar from './CarForm';
 import ApiClient from './api/ApiClient';
-import BaseModal from './baseModal';
+import EditCarModal from './baseModal';
+import AddCarModal from './baseModal';
 
 export default class Cars extends React.Component {
 
@@ -28,6 +29,10 @@ export default class Cars extends React.Component {
 
 		this.state = {
 			cars: [],
+			addCarModal: {
+				title: 'Vytvořit auto',
+				show: false
+			},
 			modal: {
 				title: 'vychozi',
 				show: false
@@ -41,15 +46,29 @@ export default class Cars extends React.Component {
 	render() {
 		return (
 			<div>
-				<BaseModal
+				<EditCarModal
 					title={this.state.modal.title}
 					show={this.state.modal.show}
 					onClose={this.closeModal}
 				>
 					<EditCar add={this.addCar} car={this.state.modal.car} onSubmitForm={this.onSubmitCarForm} />
-				</BaseModal>
-				<AddCar add={this.addCar}  onSubmitForm={this.onSubmitCarForm} />
-				<h3>Auta ({this.state.cars.length})</h3>
+				</EditCarModal>
+
+				<AddCarModal
+					title={this.state.addCarModal.title}
+					show={this.state.addCarModal.show}
+					onClose={this.closeModal}
+				>
+					<AddCar add={this.addCar}  onSubmitForm={this.onSubmitCarForm} />
+				</AddCarModal>
+
+
+				<button className="btn btn-primary" onClick={() => this.openAddCarModal()}>
+					Vytvořit auto
+				</button>
+
+
+				<h3>Výpis všech aut ({this.state.cars.length})</h3>
 				{this.state.cars.map(car => {
 					return <Car car={car}
 								key={car.id}
@@ -121,6 +140,19 @@ export default class Cars extends React.Component {
 	 */
 	onSubmitCarForm() {
 		this.closeModal();
+		this.setState({
+			addCarModal: {
+				show: false
+			}
+		});
+	}
+
+	openAddCarModal() {
+		this.setState({
+			addCarModal: {
+				show: true
+			}
+		});
 	}
 
 }
