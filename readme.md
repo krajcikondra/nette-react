@@ -1,6 +1,11 @@
 Nette-React example project
 =================
 
+
+Screen: 
+![screen](./screen.png "Screen")
+
+
 * Clone repository
 
 * Create databae named 'nette-react' in your MySQL server
