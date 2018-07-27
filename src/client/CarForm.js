@@ -14,10 +14,8 @@ export default class CarForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         if (this.props.car) {
             this.state = this.props.car;
-            console.log('state stat v konstruktoru 1');
 
         } else {
-            console.log('state stat v konstruktoru 2');
             this.state = {
                 value: '',
                 brand: '',
