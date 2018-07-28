@@ -1,0 +1,22 @@
+extensions:
+	webSockets: IPub\WebSockets\DI\WebSocketsExtension
+#	webSocketsMessage: IPub\WebSocketsMessage\DI\WebSocketsMessageExtension
+	webSocketsWAMP: IPub\WebSocketsWAMP\DI\WebSocketsWAMPExtension
+#	webSocketsSession: IPub\WebSocketsSession\DI\WebSocketsSessionExtension
+
+
+# WebSockets server
+webSockets:
+    clients:
+        storage:
+            driver: @clients.driver.memory  # Here you can pass service name of your clients storage driver implementation
+            ttl:    0                       # If your driver support TTL, here you can define it
+    # Main server configuration
+    server:
+        httpHost:   localhost
+        port:       8800        # The websocket server will listen on this port
+#        address:    0.0.0.0
+    routes:
+        '/[!<locale [a-z]{2,4}>/]communication/<controller>/car/<carId>' : 'CarController:'
+    mapping:
+        *: App\WebSocketModule\*Controller

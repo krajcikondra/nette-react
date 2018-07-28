@@ -1,3 +1,12 @@
+extensions:
+    console: Kdyby\Console\DI\ConsoleExtension
+
+console:
+    url: http://localhost/nette-react/www
+
+includes:
+    - websocket.neon
+
 parameters:
     database:
         default:

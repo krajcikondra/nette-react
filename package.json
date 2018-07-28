@@ -40,6 +40,7 @@
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
     "react-pnotify": "0.0.6",
+    "react-websocket": "^2.0.0",
     "style-loader": "^0.13.1",
     "superagent": "^3.8.3",
     "url-loader": "^1.0.1",

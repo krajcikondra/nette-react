@@ -23,4 +23,8 @@ Screen:
 
 # Launh application
 
-In terminal run  ```node webpack/index```
+In terminal run  
+
+```node webpack/index```
+
+```php www/index.php ipub:websockets:start```

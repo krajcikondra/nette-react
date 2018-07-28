@@ -9,7 +9,33 @@ export default class HttpClient {
 	 * @returns {Promise}
 	 */
 	sendGetRequest(url, args) {
-		return new Promise(function (reseolve, reject) {
+
+
+			if (! "WebSocket" in window) { alert("WebSocket is supported by your Browser!"); }
+
+			var ws = new WebSocket("ws://localhost:8800/car");
+
+			ws.onopen = function() {
+
+				// Web Socket is connected, send data using send()
+				ws.send("Message to send");
+				alert("Message is sent...");
+			};
+
+			ws.onmessage = function (evt) {
+				var received_msg = evt.data;
+				alert("Message is received...");
+			};
+
+			ws.onclose = function() {
+
+				// websocket is closed.
+				alert("Connection is closed...");
+			};
+
+
+
+			return new Promise(function (reseolve, reject) {
 			request
 				.get(url)
 				.query(args)
