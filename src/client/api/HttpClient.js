@@ -18,12 +18,12 @@ export default class HttpClient {
 			ws.on('socket/connect', function(session){
 
 				// The callback function in "subscribe" is called everytime an event is published in that channel.
-				session.subscribe("en/communication/car/room/1", function(uri, payload){
+				session.subscribe("en/communication/car/car/1", function(uri, payload){
 					console.log("Received message", payload.msg);
 				});
-
-				session.publish('en/communication/car/room/123', 'This is a message!');
-			})
+				var result = session.publish('en/communication/car/car/123', 'This is a message!');
+				console.log('result', result);
+			});
 
 			return new Promise(function (reseolve, reject) {
 			request

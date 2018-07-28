@@ -2,7 +2,7 @@ extensions:
 	webSockets: IPub\WebSockets\DI\WebSocketsExtension
 #	webSocketsMessage: IPub\WebSocketsMessage\DI\WebSocketsMessageExtension
 	webSocketsWAMP: IPub\WebSocketsWAMP\DI\WebSocketsWAMPExtension
-#	webSocketsSession: IPub\WebSocketsSession\DI\WebSocketsSessionExtension
+	webSocketsSession: IPub\WebSocketsSession\DI\WebSocketsSessionExtension
 
 
 # WebSockets server
@@ -19,4 +19,4 @@ webSockets:
     routes:
         '/[!<locale [a-z]{2,4}>/]communication/<controller>/car/<carId>' : 'CarController:'
     mapping:
-        *: App\WebSocketModule\*Controller
+        *: App\WebSocketModule\Controllers\*Controller

@@ -14,7 +14,9 @@ export default class WebSocketClient {
 		ws.onopen = function() {
 
 			// Web Socket is connected, send data using send()
-			ws.send("Message to send");
+			ws.send("Message to send", function() {
+				alert('odpoved');
+			});
 			alert("Message is sent...");
 		};
 
