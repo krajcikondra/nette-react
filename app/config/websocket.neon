@@ -15,7 +15,7 @@ webSockets:
     server:
         httpHost:   localhost
         port:       8800        # The websocket server will listen on this port
-#        address:    0.0.0.0
+        address:    0.0.0.0
     routes:
         '/[!<locale [a-z]{2,4}>/]communication/<controller>/car/<carId>' : 'CarController:'
     mapping:

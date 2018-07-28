@@ -13,27 +13,17 @@ export default class HttpClient {
 
 			if (! "WebSocket" in window) { alert("WebSocket is supported by your Browser!"); }
 
-			var ws = new WebSocket("ws://localhost:8800/car");
+			var ws = IPub.WebSockets.WAMP.initialize("ws://localhost:8800");
 
-			ws.onopen = function() {
+			ws.on('socket/connect', function(session){
 
-				// Web Socket is connected, send data using send()
-				ws.send("Message to send");
-				alert("Message is sent...");
-			};
+				// The callback function in "subscribe" is called everytime an event is published in that channel.
+				session.subscribe("en/communication/car/room/1", function(uri, payload){
+					console.log("Received message", payload.msg);
+				});
 
-			ws.onmessage = function (evt) {
-				var received_msg = evt.data;
-				alert("Message is received...");
-			};
-
-			ws.onclose = function() {
-
-				// websocket is closed.
-				alert("Connection is closed...");
-			};
-
-
+				session.publish('en/communication/car/room/123', 'This is a message!');
+			})
 
 			return new Promise(function (reseolve, reject) {
 			request

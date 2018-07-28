@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "162c4f0df9d07f734c0db770c9ed61ad",
+    "content-hash": "b45e95bb4a785391c6f2dac306cc3484",
     "packages": [
         {
             "name": "cakephp/cache",
@@ -420,6 +420,76 @@
                 "webbsocket-server"
             ],
             "time": "2017-05-16T16:49:19+00:00"
+        },
+        {
+            "name": "ipub/websockets-message",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iPublikuj/websockets-message.git",
+                "reference": "c7b4a430844b5203a1cadf5bea4349ce982b2bcf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iPublikuj/websockets-message/zipball/c7b4a430844b5203a1cadf5bea4349ce982b2bcf",
+                "reference": "c7b4a430844b5203a1cadf5bea4349ce982b2bcf",
+                "shasum": ""
+            },
+            "require": {
+                "ipub/websockets": "~1.0.5",
+                "nette/di": "~2.4",
+                "nette/utils": "~2.4",
+                "php": ">=7.0.0",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "nette/bootstrap": "~2.4",
+                "nette/mail": "~2.4",
+                "nette/robot-loader": "~2.4",
+                "nette/safe-stream": "~2.3",
+                "nette/tester": "@dev",
+                "pds/skeleton": "^1.0",
+                "tracy/tracy": "@dev"
+            },
+            "type": "library",
+            "extra": {
+                "ipub": {
+                    "configuration": {
+                        "extensions": {
+                            "webSocketsMessage": "IPub\\WebSocketsMessage\\DI\\WebSocketsMessageExtension"
+                        }
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "IPub\\WebSocketsMessage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "iPublikuj:cms",
+                    "email": "info@ipublikuj.eu",
+                    "homepage": "http://www.ipublikuj.eu/"
+                }
+            ],
+            "description": "Extension for implementing classic websocket messages with ipub/websockets websocket server with client side",
+            "homepage": "https://github.com/iPublikuj/websockets-message",
+            "keywords": [
+                "WebSockets",
+                "framework",
+                "ipub",
+                "ipublikuj",
+                "message",
+                "nette",
+                "tools"
+            ],
+            "time": "2017-03-24T09:27:41+00:00"
         },
         {
             "name": "ipub/websockets-session",

@@ -24,7 +24,8 @@
 		"ipub/websockets": "^1.0",
 		"ipub/websockets-session": "^1.0",
 		"ipub/websockets-wamp": "^1.0",
-		"kdyby/console": "^2.7"
+		"kdyby/console": "^2.7",
+		"ipub/websockets-message": "^0.0.1"
 	},
 	"require-dev": {
 		"nette/tester": "^2.0"

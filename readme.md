@@ -18,6 +18,8 @@ Screen:
 
   * ```npm install```
 
+  * ```bower install```
+
   * ```vendor/bin/phinx migrate```
 
 
