@@ -23,7 +23,7 @@ Screen:
   * ```vendor/bin/phinx migrate```
 
 
-# Launh application
+# Launch application
 
 In terminal run  
 
